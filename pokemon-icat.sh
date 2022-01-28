@@ -12,4 +12,8 @@ echo " "
 echo " "
 
 ### CHANGE THIS LINE IF YOU NEED TO USE THIS SCRIPT ON ANOTHER TERMINAL
-kitty icat --align left --silent $HOME/.pokemon-icat/pokemon-icons/$pokemon.png
+if test $TERM_PROGRAM = "iTerm.app" ; then
+    imgcat $HOME/.pokemon-icat/pokemon-icons/$pokemon.png
+else
+    kitty icat --align left --silent $HOME/.pokemon-icat/pokemon-icons/$pokemon.png
+fi
