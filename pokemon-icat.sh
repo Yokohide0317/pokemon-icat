@@ -14,6 +14,8 @@ echo " "
 ### CHANGE THIS LINE IF YOU NEED TO USE THIS SCRIPT ON ANOTHER TERMINAL
 if test $TERM_PROGRAM = "iTerm.app" ; then
     imgcat $HOME/.pokemon-icat/pokemon-icons/$pokemon.png
-else
+elif test $TERM_PROGRAM = "kitty" ; then
     kitty icat --align left --silent $HOME/.pokemon-icat/pokemon-icons/$pokemon.png
+else ; then
+    echo "Using other terminal"
 fi
